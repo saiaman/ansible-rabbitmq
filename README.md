@@ -83,12 +83,11 @@ You must first create a Launch Configuration (LC) that contains a user data file
     
     echo "BEGIN USER-DATA"
     
-    # install needed packages for ansible
-    apt-get update -y -q
-    apt-get install -y -q python-paramiko python-yaml python-jinja2 python-simplejson python-setuptools
-    apt-get install -y -q git-core python-pip
+
+    #yum install -y -q python27-paramiko.noarch python27-PyYAML.x86_64 python27-jinja2 python27-simplejson python27-setuptools
+    yum install -y -q git python27-pip.noarch
     
-    pip install boto ansible
+    pip install ansible
     
     # setup hosts
     echo "[rabbitmq]" > ~/ansible_hosts
